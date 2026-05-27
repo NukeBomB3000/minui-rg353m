@@ -1,0 +1,18 @@
+# dArkOS Image (zu groß, Copyright)
+*.img
+*.img.gz
+
+# MinUI-Quellcode (wird von build.sh automatisch geklont)
+.minui-src/
+
+# MinUI-Dateien (Copyright Shaun Inman — bitte selbst herunterladen, siehe README)
+minui/MinUI.zip
+minui/Emus/
+minui/Tools/
+minui/Roms/
+
+# Logs
+install.log
+
+# macOS
+.DS_Store

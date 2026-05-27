@@ -1,0 +1,3 @@
+$(PLATFORM):
+	# rg353m: keine boot.sh / install.sh nötig — boot via systemd minui.service
+	# Binaries werden von install_to_sd.sh auf die SD-Karte kopiert
