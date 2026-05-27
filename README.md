@@ -105,7 +105,6 @@ Game Gear, Neo Geo Pocket, und mehr.
 | Problem | Beschreibung |
 |---------|-------------|
 | Kein WLAN-Tool | dArkOS-Netzwerktools nicht im MinUI-Kontext verfügbar |
-| DinguxCommander | Leichtes Letterboxing (480×480-UI in 640×480-Display) |
 | Kein Hardware-RTC | Uhrzeit muss nach jedem Kaltstart neu gesetzt werden |
 
 ## Projektstruktur
