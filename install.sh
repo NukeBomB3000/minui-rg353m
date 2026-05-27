@@ -219,8 +219,9 @@ AUTO_PATH="$USERDATA_PATH/auto.sh"
 # Auto-Resume: wenn minarch beim letzten Shutdown eine auto.sh geschrieben hat
 if [ -f "$AUTO_PATH" ]; then
     NEXT_CMD=$(cat "$AUTO_PATH")
-    PAK_SCRIPT=$(echo "$NEXT_CMD" | cut -d"'" -f2)
-    PAK_ROM=$(echo "$NEXT_CMD" | cut -d"'" -f4)
+    eval set -- "$NEXT_CMD"
+    PAK_SCRIPT="$1"
+    PAK_ROM="$2"
     echo "$(date +'%F %T') auto-resume: $PAK_SCRIPT $PAK_ROM" >> "$LOG"
     rm -f "$AUTO_PATH"
     "$PAK_SCRIPT" "$PAK_ROM" &
@@ -250,8 +251,9 @@ while [ -f "$EXEC_PATH" ]; do
     fi
     if [ -f "$NEXT_PATH" ]; then
         NEXT_CMD=$(cat "$NEXT_PATH")
-        PAK_SCRIPT=$(echo "$NEXT_CMD" | cut -d"'" -f2)
-        PAK_ROM=$(echo "$NEXT_CMD" | cut -d"'" -f4)
+        eval set -- "$NEXT_CMD"
+        PAK_SCRIPT="$1"
+        PAK_ROM="$2"
         rm -f "$NEXT_PATH"
         echo "$(date +'%F %T') launching: $PAK_SCRIPT ${PAK_ROM:-(no rom)}" >> "$LOG"
         sleep 0.5
